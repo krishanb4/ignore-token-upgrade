@@ -127,38 +127,46 @@ const Button: React.FC = () => {
         </div>
       </div>
 
-      {approveBalance > 0 ? (
-        <button
-          className={`bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded w-[150px]] ${
-            isUpgrading ? "opacity-25 cursor-not-allowed" : ""
-          }`}
-          onClick={() => Upgrade()}
-        >
-          {isUpgrading ? "Upgrading..." : "Upgrade"}
-        </button>
-      ) : isConnected ? (
-        <button
-          className={`bg-[#02ad02] ${
-            isApproving ? "" : "hover:bg-green-700"
-          } text-white font-bold py-2 px-4 rounded ${
-            isApproving ? "opacity-25 cursor-not-allowed" : ""
-          }`}
-          onClick={() => Call()}
-          disabled={isApproving}
-        >
-          {isApproving ? "Approving..." : "Approve"}
-        </button>
-      ) : (
-        <button
-          className={`bg-[#02ad02] ${
-            isApproving ? "" : "hover:bg-green-700"
-          } text-white font-bold py-2 px-4 rounded 
+      {userBalanceFrom > 1 ? (
+        approveBalance > 0 ? (
+          <button
+            className={`bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded w-[150px]] ${
+              isUpgrading ? "opacity-25 cursor-not-allowed" : ""
+            }`}
+            onClick={() => Upgrade()}
+          >
+            {isUpgrading ? "Upgrading..." : "Upgrade"}
+          </button>
+        ) : isConnected ? (
+          <button
+            className={`bg-[#02ad02] ${
+              isApproving ? "" : "hover:bg-green-700"
+            } text-white font-bold py-2 px-4 rounded ${
+              isApproving ? "opacity-25 cursor-not-allowed" : ""
+            }`}
+            onClick={() => Call()}
+            disabled={isApproving}
+          >
+            {isApproving ? "Approving..." : "Approve"}
+          </button>
+        ) : (
+          <button
+            className={`bg-[#02ad02] ${
+              isApproving ? "" : "hover:bg-green-700"
+            } text-white font-bold py-2 px-4 rounded 
             opacity-25 cursor-not-allowed
           }`}
-          onClick={() => Call()}
-          disabled={isApproving}
+            onClick={() => Call()}
+            disabled={isApproving}
+          >
+            Connect Wallet
+          </button>
+        )
+      ) : (
+        <button
+          className={`bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded w-[150px]] opacity-25 cursor-not-allowed`}
         >
-          Connect Wallet
+          Your token balance is low
         </button>
       )}
     </div>
