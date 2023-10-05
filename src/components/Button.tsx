@@ -11,7 +11,7 @@ import { toast } from "react-toastify";
 
 const OLD_TOKEN = "0x61B83eDF87Ea662C695439A807c386455c9E797C";
 const NEW_TOKEN = "0xB2CdD9F28F1A216547d23A3022A2d83693d10DED";
-const CONTRACT = "0xE02C633344dA5db25a4803ff41298c4e83A25079";
+const CONTRACT = "0xCDB5FF1C441f454726cf8EE253409451fA2c620E";
 
 const Button: React.FC = () => {
   const [allError, isError] = useState(false);
